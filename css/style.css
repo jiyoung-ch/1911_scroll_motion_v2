@@ -5,9 +5,11 @@ ul,li,ol{list-style: none;}
 a{text-decoration: none;}
 img{max-width:100%; border:0; height:auto;}
 
+body.is-ie .title_area .title_animate span{background:none !important;}
+
 #wrap{position:relative; width:100%;}
 .animate_btn{display:inline-block; padding:15px 30px; background:#640f0f; color:#fff; box-sizing:border-box; font-weight:600;}
-.title_area .title_animate span{opacity:0; display:inline-block; position:relative; transition: top 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1); z-index:999;  -webkit-text-fill-color: transparent;  -webkit-background-clip: text !important; -webkit-text-fill-color: transparent;  background:url(../images/texture_green.jpg) center center no-repeat; color: #aeb1a0;}
+.title_area .title_animate span{opacity:0; display:inline-block; position:relative; transition: top 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1); z-index:999;  -webkit-text-fill-color: transparent;  -webkit-background-clip: text !important; background:url(../images/texture_green.jpg) center center no-repeat; color: #aeb1a0;}
 .animate_txt{overflow: hidden; transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1); transform: translate(0, 100%); opacity:0;}
 
 .section1{position: relative;}
