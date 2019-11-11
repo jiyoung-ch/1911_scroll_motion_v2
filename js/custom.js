@@ -1,9 +1,7 @@
 $(document).ready(function () {
-    /* Sample function that returns boolean in case the browser is Internet Explorer*/
-    //브라우저가 익스인 경우 boolean을 반환 하는 샘플 함수
+    //브라우저가 익스인 경우 boolean을 반환 하는 함수
     function isIE() {
         ua = navigator.userAgent;
-        /* MSIE used to detect old browsers and Trident used to newer ones*/
         // MSIE는 기존 브라우저를 감지하는데 사용되고 Trident는 최신 브라우저를 사용하는데 사용
         var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
 
@@ -15,12 +13,6 @@ $(document).ready(function () {
     }else{
         $('body').removeClass('is-ie');
     }
-
-    // if (is.ie()) {
-    //     $('body').addClass('.is-ie');
-    // };
-
-
 
     //열리자마자 텍스트 모션 활성화
     (function () {
