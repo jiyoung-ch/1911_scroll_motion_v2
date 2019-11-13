@@ -8,9 +8,9 @@ $(document).ready(function () {
         return is_ie;
     }
     /* Create an alert to show if the browser is IE or not */
-    if (isIE()){
+    if (isIE()) {
         $('body').addClass('is-ie');
-    }else{
+    } else {
         $('body').removeClass('is-ie');
     }
 
@@ -57,27 +57,35 @@ $(document).ready(function () {
             });
         }
 
-        $(".section2").find(".half.first .animate_txt").removeClass("on");
-        $(".section2").find(".img_bg").removeClass("on");
-
         if (scroll >= pos2 - 600 && scroll < pos3 - 200) {
-            $(".section2").find(".half.first .animate_txt").addClass("on");
+            $(".section2").find(".half.first .animate_txt").css({
+                "transform": "translate(0, 0)",
+                "opacity": 1
+            });
             $(".section2").find(".img_bg").addClass("on");
+            $(".section2").find(".img_bg").css({
+                "opacity": 1
+            });
         }
 
-        $(".section2").find(".half.last .animate_txt").removeClass("on");
-        $(".section2").find(".half.last .animate_btn").removeClass("on");
-        $(".section3").find(".keynote").removeClass("on");
-
         if (scroll >= pos2 + 200) {
-            $(".section2").find(".half.last .animate_txt").addClass("on");
+            $(".section2").find(".half.last .animate_txt").css({
+                "transform": "translate(0, 0)",
+                "opacity": 1
+            });
             $(".section2").find(".half.last .animate_btn").addClass("on");
         }
 
-        $(".section3").removeClass("on");
-
         if (scroll >= pos3 - 500 && scroll < pos4 - 300) {
-            $(".section3").addClass("on");
+            $(".section3").find(".mini").css({
+                "transform": "translateY(0)",
+                "opacity": 1
+            });
+            $(".section3").find(".title_animate span").css({
+                "top": 0,
+                "opacity": 1
+            });
+            $(".section3").find(".img_bg").addClass("on");
 
             if (scroll >= pos3 - 50) {
                 $(".section3").find(".title_animate").find("span:even").stop().animate({
