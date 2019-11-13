@@ -59,6 +59,7 @@ $(document).ready(function () {
 
         $(".section2").find(".half.first .animate_txt").removeClass("on");
         $(".section2").find(".img_bg").removeClass("on");
+
         if (scroll >= pos2 - 600 && scroll < pos3 - 200) {
             $(".section2").find(".half.first .animate_txt").addClass("on");
             $(".section2").find(".img_bg").addClass("on");
@@ -74,6 +75,7 @@ $(document).ready(function () {
         }
 
         $(".section3").removeClass("on");
+
         if (scroll >= pos3 - 500 && scroll < pos4 - 300) {
             $(".section3").addClass("on");
 
