@@ -107,28 +107,7 @@ body.is-ie .title_area .title_animate span{background:none !important;}
 
 .section6{position:relative; padding:100px 0;}
 
-@keyframes dash {
-    70%,80% {
-        stroke-dashoffset: 0;
-        fill-opacity: 0;
-    }
 
-    85% {
-        fill-opacity: 0;
-        stroke-opacity: 1;
-    }
-
-    95% {
-        stroke: #640f0f;
-        stroke-dashoffset: -301;
-        stroke-opacity: 0;
-    }
-
-    100% {
-        fill-opacity: 1;
-        stroke-dashoffset: -301;
-    }
-}
 
 #Layer_1 {opacity:0; margin-left: auto; margin-right : auto; top: 50%; position: absolute; left: 50%; margin-left: -65px; margin-top: -35px;}
 
@@ -163,6 +142,13 @@ svg #bp_svg * {
 }
 
 svg #bp_svg path {fill:#640f0f;}
+
+@keyframes dash {
+    70%,80% {stroke-dashoffset: 0; fill-opacity: 0;}
+    85% {fill-opacity: 0; stroke-opacity: 1;}
+    95% {stroke: #640f0f; stroke-dashoffset: -301; stroke-opacity: 0;}
+    100% {fill-opacity: 1; stroke-dashoffset: -301;}
+}
 
 @keyframes showFromTop{
     0%{transform:scale(1, 0); -ms-transform:scale(1, 0); transform-origin:top center; opacity:1;}
