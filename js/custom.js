@@ -27,7 +27,8 @@ $(document).ready(function () {
     var pos2 = $("#wrap").find(".section").eq(1).offset().top;
     var pos3 = $("#wrap").find(".section").eq(2).offset().top;
     var pos4 = $("#wrap").find(".section").eq(3).offset().top;
-    //var pos5 = $("#wrap").find(".section").eq(4).offset().top;
+    var pos5 = $("#wrap").find(".section").eq(4).offset().top;
+    var pos6 = $("#wrap").find(".section").eq(5).offset().top;
 
     //브라우저 스크롤
     $(window).on("scroll", function () {
@@ -112,9 +113,18 @@ $(document).ready(function () {
             });
             $(".section4").find(".animate_btn").addClass("on");
         }
-        // if(scroll>=pos5-500) {
+        if(scroll>=pos5-800) {
+            $(".section5").find(".icon_list li").css({
+                "opacity": 1
+            });
+        }
 
-        // }
+        if(scroll>=pos6-800) {
+
+            $(".section6").find("#Layer_1").css({
+                "opacity": 1
+            });
+        }
     });
 
 
