@@ -63,7 +63,7 @@ $(document).ready(function () {
                 "transform": "translate(0, 0)",
                 "opacity": 1
             });
-            $(".section2").find(".img_bg").addClass("on")
+            $(".section2").find(".img_bg").addClass("on");
             // $(".section2").find(".img_bg").css({
             //     "opacity": 1
             // });
