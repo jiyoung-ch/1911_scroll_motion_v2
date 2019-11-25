@@ -77,6 +77,48 @@ $(document).ready(function () {
             $(".section2").find(".half.last .animate_btn").addClass("on");
         }
 
+        //슬라이드
+        var cnt = 0;
+        var preCnt = 0;
+        var length = $(".img_group").find(".img_bg").length;
+
+        $(".btn_next").on("click",function(e){
+            e.preventDefault();
+
+            preCnt = cnt;
+            cnt++;
+            console.log(cnt);
+
+            if(cnt >= length){
+                cnt = 0;
+            };
+
+            $(".img_group").find(".img_bg").eq(preCnt).stop().animate({left:"-100%"},500,function(){
+                $(this).css("left","100%");
+            });
+
+            $(".img_group").find(".img_bg").eq(cnt).stop().animate({left:"0"},500).addClass("on").siblings().removeClass("on");
+
+            $(".img_group").find(".keynote").removeClass("on");
+            $(".img_group").find(".keynote").eq(cnt).addClass("on").siblings().removeClass("on");
+        });
+
+        $(".btn_prev").on("click",function(e){
+            e.preventDefault();
+
+            preCnt = cnt;
+            cnt--;
+
+            if(cnt < 0){
+                cnt = length-1;
+            }
+
+            $(".img_group").find(".img_bg").eq(cnt).css("left",'-100%').stop().animate({left:"0"},500).addClass("on").siblings().removeClass("on");
+
+            $(".img_group").find(".img_bg").eq(preCnt).stop().animate({left:"100%"},500);
+        });
+
+
         if (scroll >= pos3 - 500 && scroll < pos4 - 300) {
             $(".section3").find(".mini").css({
                 "transform": "translateY(0)",
@@ -86,7 +128,7 @@ $(document).ready(function () {
                 "top": 0,
                 "opacity": 1
             });
-            $(".section3").find(".img_bg").addClass("on");
+            $(".section3").find(".img_bg.first").addClass("on");
 
             if (scroll >= pos3 - 50) {
                 $(".section3").find(".title_animate").find("span:even").stop().animate({
@@ -100,7 +142,7 @@ $(document).ready(function () {
                     duration: 1000
                 });
 
-                $(".section3").find(".keynote").addClass("on");
+                $(".section3").find(".img_bg.first").find(".keynote").addClass("on");
             }
         }
         if (scroll >= pos4 - 500) {
@@ -119,7 +161,8 @@ $(document).ready(function () {
             });
         }
 
-        if(scroll>=pos6-800) {
+
+        if(scroll>=pos6-600) {
 
             $(".section6").find("#Layer_1").css({
                 "opacity": 1
@@ -129,3 +172,4 @@ $(document).ready(function () {
 
 
 });
+
