@@ -132,10 +132,8 @@ $(document).ready(function () {
                 imgKeynote.eq(cnt).addClass("on").siblings().removeClass("on");
 
                 imgBg.eq(preCnt).stop().animate({left:"100%"},500);
-
-                state = true;
             }
-
+            state = true;
         });
 
 
