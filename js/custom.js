@@ -34,7 +34,7 @@ $(document).ready(function () {
     $(window).on("scroll", function () {
         var scroll = $(this).scrollTop();
 
-        if (scroll >= pos1 - 400 && scroll < pos2 - 400) {
+        if (scroll >= pos1 && scroll < pos2 - 700) {
             $("#wrap").find(".section1").find(".title_animate").find("span:even").stop().animate({
                 now: 0
             }, {
