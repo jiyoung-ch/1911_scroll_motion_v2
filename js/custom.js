@@ -7,7 +7,7 @@ $(document).ready(function () {
 
         return is_ie;
     }
-    /* Create an alert to show if the browser is IE or not */
+
     if (isIE()) {
         $('body').addClass('is-ie');
     } else {
