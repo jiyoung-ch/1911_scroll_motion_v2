@@ -44,20 +44,19 @@ body.is-ie .title_area .title_animate span{background:none !important;}
 .section2 .visual_area.top .half.last .img_area.img1{top:-170px; z-index:22; width:42%;}
 .section2 .visual_area.top .half.last .img_area.img2{top:-90px; right:20px;}
 .section2 .visual_area.top .half.last .img_area.img2 .img_bg img{filter: grayscale(100%);}
-.section2 .visual_area.top .half.last .img_area .img_bg, .section2 .visual_area.bottom .half.first .img_area .img_bg{position:relative; opacity:0; transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 1400ms; z-index:9;}
-.section2 .visual_area.top .half.last .img_area .img_bg.on, .section2 .visual_area.bottom .half.first .img_area .img_bg.on{opacity:1;}
-.section2 .visual_area.top .half.last .img_area .img_bg::before, .section2 .visual_area.bottom .half.first .img_area .img_bg::before{content:''; display: block; position:absolute; left:0; top:0; bottom:0; right:0; z-index:10; opacity:0;}
-.section2 .visual_area.top .half.last .img_area .img_bg.red::before, .section2 .visual_area.bottom .half.first .img_area .img_bg.red::before{background-color:#640f0f;}
-.section2 .visual_area.top .half.last .img_area .img_bg.gray::before, .section2 .visual_area.bottom .half.first .img_area .img_bg.gray::before{background-color:#aeb1a0;}
-.section2 .visual_area.top .half.last .img_area .img_bg.red.on::before{animation:showFromTop 1.8s 0.8s forwards;}
-.section2 .visual_area.top .half.last .img_area .img_bg.gray.on::before, .section2 .visual_area.bottom .half.first .img_area .img_bg.gray.on::before{animation:showFromRight 1.8s 0.8s forwards;}
+.section2 .visual_area .img_area .img_bg .img_box{position:relative; opacity:0; transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 1400ms; z-index:9;}
+.section2 .visual_area .img_area .img_bg::before{content:''; display: block; position:absolute; left:0; top:0; bottom:0; right:0; z-index:10; opacity:0;}
+.section2 .visual_area .img_area .img_bg.red::before{background-color:#640f0f;}
+.section2 .visual_area .img_area .img_bg.gray::before{background-color:#aeb1a0;}
+.section2 .visual_area .img_area .img_bg.on .img_box{opacity:1;}
+.section2 .visual_area .img_area .img_bg.red.on::before{animation:showFromTop 1.8s 0.8s forwards;}
+.section2 .visual_area .img_area .img_bg.gray.on::before{animation:showFromRight 1.8s 0.8s forwards;}
 
 .section2 .visual_area.bottom .half{overflow:hidden;}
 .section2 .visual_area.bottom .half.first{position:relative; top:-200px; max-height:520px;}
 .section2 .visual_area.bottom .half.last{padding:150px 80px 0 80px;}
 .section2 .visual_area.bottom .half.last .txt_box{margin-bottom:30px;}
 .section2 .visual_area.bottom .half.last .txt_box .animate_txt{font-size:18px; font-family: 'Domine',serif; line-height:1.6; color:#474644; font-weight:600;}
-
 .section2 .visual_area.bottom .half.last .animate_btn{margin-top:50px; opacity:0;}
 .section2 .visual_area.bottom .half.last .animate_btn.on{animation:showBtn 1.8s 0.8s forwards;}
 
@@ -85,6 +84,7 @@ body.is-ie .title_area .title_animate span{background:none !important;}
 
 
 .section4{padding:30px 100px 100px 250px;}
+.section4 .title_area .title_animate{text-align:center;}
 .section4 .news_box{position:relative; padding:150px 80px 200px 150px;}
 .section4 .news_box .title_area{position:absolute; left:0px; top:70px;}
 .section4 .news_box .title_area .title_animate span{display:block; font-size:60px; line-height:2;}

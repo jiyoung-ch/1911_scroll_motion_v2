@@ -1,7 +1,7 @@
 $(document).ready(function () {
     //브라우저가 익스인 경우 boolean을 반환 하는 함수
     function isIE() {
-        ua = navigator.userAgent;
+        var ua = navigator.userAgent;
         // MSIE는 기존 브라우저를 감지하는데 사용되고 Trident는 최신 브라우저를 사용하는데 사용
         var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
 
@@ -10,17 +10,13 @@ $(document).ready(function () {
 
     if (isIE()) {
         $('body').addClass('is-ie');
-    } else {
-        $('body').removeClass('is-ie');
     }
 
     //열리자마자 텍스트 모션 활성화
-    (function () {
-        $("#wrap").find(".section1").find(".title_animate").find("span").css({
-            "top": 0,
-            "opacity": 1
-        });
-    })();
+    $("#wrap").find(".section1").find(".title_animate").find("span").css({
+        "top": 0,
+        "opacity": 1
+    });
 
     //전역변수 설정
     var pos1 = $("#wrap").find(".section").eq(0).offset().top;
@@ -29,6 +25,54 @@ $(document).ready(function () {
     var pos4 = $("#wrap").find(".section").eq(3).offset().top;
     var pos5 = $("#wrap").find(".section").eq(4).offset().top;
     var pos6 = $("#wrap").find(".section").eq(5).offset().top;
+
+    (function () {
+        //슬라이드
+        var cnt = 0;
+        var preCnt = 0;
+        var imgBg = $(".img_group").find(".img_bg");
+        var imgKeynote = $(".img_group").find(".keynote");
+        var length = imgBg.length;
+
+        $("#arrowBtn").find(".btn").on("click",function(e){
+            e.preventDefault();
+
+            preCnt = cnt;
+            if( $(this).is(".btn_next") ){
+                cnt++;
+                if(cnt >= length){
+                    cnt = 0;
+                }
+                next();
+            }else{
+                cnt--;
+
+                if(cnt < 0){
+                    cnt = length-1;
+                }
+                prev();
+            }
+            keynote();
+        });
+
+        function next() {
+            imgBg.eq(preCnt).stop().animate({left:"-100%"},500,function(){
+                $(this).css("left","100%");
+            });
+
+            imgBg.eq(cnt).stop().animate({left:"0"},500).addClass("on").siblings().removeClass("on");
+        }
+
+        function prev() {
+            imgBg.eq(cnt).css("left",'-100%').stop().animate({left:"0"},500).addClass("on").siblings().removeClass("on");
+            imgBg.eq(preCnt).stop().animate({left:"100%"},500);
+        }
+
+        function keynote() {
+            imgKeynote.removeClass("on");
+            imgKeynote.eq(cnt).addClass("on").siblings().removeClass("on");
+        }
+    }());
 
     //브라우저 스크롤
     $(window).on("scroll", function () {
@@ -73,52 +117,6 @@ $(document).ready(function () {
                 "opacity": 1
             });
             $(".section2").find(".half.last .animate_btn").addClass("on");
-        }
-
-        //슬라이드
-        var cnt = 0;
-        var preCnt = 0;
-        var imgBg = $(".img_group").find(".img_bg");
-        var imgKeynote = $(".img_group").find(".keynote");
-        var length = imgBg.length;
-
-        $("#arrowBtn").find(".btn").on("click",function(e){
-            e.preventDefault();
-
-            preCnt = cnt;
-            if( $(this).is(".btn_next") ){
-                cnt++;
-                if(cnt >= length){
-                    cnt = 0;
-                };
-                next();
-            }else{
-                cnt--;
-
-                if(cnt < 0){
-                    cnt = length-1;
-                };
-                prev();
-            };
-            keynote();
-        });
-
-        function next() {
-            imgBg.eq(preCnt).stop().animate({left:"-100%"},500,function(){
-                $(this).css("left","100%");
-            });
-
-            imgBg.eq(cnt).stop().animate({left:"0"},500).addClass("on").siblings().removeClass("on");
-        }
-
-        function prev() {
-            imgBg.eq(cnt).css("left",'-100%').stop().animate({left:"0"},500).addClass("on").siblings().removeClass("on");
-            imgBg.eq(preCnt).stop().animate({left:"100%"},500);
-        }
-
-        function keynote() {
-            imgKeynote.removeClass("on");
-            imgKeynote.eq(cnt).addClass("on").siblings().removeClass("on");
         }
 
         if (scroll >= pos3 - 500 && scroll < pos4 - 300) {
@@ -170,7 +168,5 @@ $(document).ready(function () {
             });
         }
     });
-
-
 });
 
