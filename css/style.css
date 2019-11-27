@@ -102,7 +102,7 @@ body.is-ie .title_area .title_animate span{background:none !important;}
 .section5{width:1020px; margin:0 auto 100px;}
 .section5 .icon_list::after{content:""; display:block; clear:both;}
 .section5 .icon_list li{opacity:0; float:left; width:17%; margin-left:3%; }
-.section5 .icon_list li:nth-child(1){margin-left:0; transition-delay:0s;}
+.section5 .icon_list li:nth-child(1){transition-delay:0s;}
 .section5 .icon_list li:nth-child(2){transition-delay:.5s;}
 .section5 .icon_list li:nth-child(3){transition-delay:.7s;}
 .section5 .icon_list li:nth-child(4){transition-delay:.9s;}
